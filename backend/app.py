@@ -8,7 +8,7 @@ import model2
 
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, resources={r"/detect": {"origins": "*"}})
+CORS(app, supports_credentials=True, resources={r"/detect": {"origins": "*"}}, origins="*")
 
 
 

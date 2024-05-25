@@ -13,7 +13,7 @@ const Fault = () => {
     formData.append('file', image);
 
     try {
-      const response = await fetch('http://localhost:5000/detect', {
+      const response = await fetch('https://aerothon60-1.onrender.com:5000/detect', {
         method: 'POST',
         body: formData,
         headers: {
