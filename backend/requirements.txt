@@ -1,4 +1,10 @@
 Flask
 flask-cors
 pillow
+opencv-python
+numpy
+tensorflow
+PIL
+io
+keras-models
 # Add other dependencies like tensorflow, torch, etc.

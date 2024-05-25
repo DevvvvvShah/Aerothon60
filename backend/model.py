@@ -56,6 +56,8 @@ import tensorflow as tf
 import cv2
 
 def scale_resize_image(image):
+    if image.mode == 'RGBA':
+        image = image.convert('RGB')
     image = tf.image.convert_image_dtype(image, tf.float32)
     image = tf.image.resize(image, (128,128))
     image /= 255.0
@@ -87,6 +89,7 @@ model = load_model('defect_aerothon_final.h5')
 
 def detect_fault(image):
     scal = scale_resize_image(image)
+
     pred = prediction (scal, model)
     # print('Model has identified {0} in Aircraft with {1} % confidence'.format(pred[0],pred[1]))
     confidence = pred[1]
